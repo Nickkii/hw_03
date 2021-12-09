@@ -1,24 +1,29 @@
-import logo from './logo.svg';
 import './App.css';
+import Film from './Components/Film';
+import Timer from './Components/Timer';
+import Pet from './Components/Pet';
+import Profile from './Components/Profile';
+
+
+
+import HeaderMenu from './Components/HeaderMenu';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <>
+      <HeaderMenu/>
+
+      <BrowserRouter >            
+         <Routes>
+               <Route  exact path ='/' element={<Film/>}></Route>
+               <Route  exact path ='/pet' element={<Pet/>}></Route>
+               <Route  exact path ='/profile' element={<Profile/>}></Route>
+         </Routes>
+      </BrowserRouter> 
+   </>
   );
 }
 

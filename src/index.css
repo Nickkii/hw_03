@@ -11,3 +11,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.item + .item::before {
+  display: inline-block;
+  white-space: pre;
+  content: ", ";
+}
